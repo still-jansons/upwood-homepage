@@ -10,7 +10,6 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .idea/inspectionProfiles/Project_Default.xml
 .idea/vcs.xml
-.gitignore
 .idea/upwood-homepage.iml
 .gitignore
 .idea/modules.xml
