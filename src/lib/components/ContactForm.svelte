@@ -4,10 +4,6 @@
     export let blok: StoryblokComponent;
 </script>
 
-<script context="module">
-    export const prerender = true;
-</script>
-
 {#key blok}
     <div
         use:storyblokEditable = {blok}

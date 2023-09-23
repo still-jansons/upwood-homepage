@@ -1,6 +1,7 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-export async function load({ parent }) {
+export const prerender = true;
+import type { PageLoad } from './$types';
+
+export const load: PageLoad = async({ parent }) => {
     const { storyblokApi } = await parent();
 
     const dataStory = await storyblokApi.getStory("contacts", {
