@@ -13,7 +13,7 @@
             <h1 class="text-4xl lg:text-[42px] leading-[52px] text-primary-gradient font-header font-bold">{blok.title}</h1>
         </div>
         <div class="rounded-3xl bg-primary-gradient py-9 px-10 drop-shadow-lg max-w-[640px]">
-            <form name="netlify-form-example" method="POST" netlify-honeypot="bot-field" data-netlify="true" class="flex items-center flex-wrap gap-6">
+            <form name="netlify-form-example" method="POST" netlify-honeypot="bot-field" netlify class="flex items-center flex-wrap gap-6">
                 <input type="hidden" name="form-name" value="netlify-form-example" />
                 <div class="flex-1">
                     <label class="text-lg leading-5 font-bold">
