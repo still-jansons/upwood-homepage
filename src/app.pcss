@@ -1,0 +1,45 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply text-black;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply rounded font-bold py-4 px-7 text-base uppercase leading-4;
+        &:disabled {
+            @apply opacity-80 cursor-not-allowed;
+        }
+        &.sm {
+            @apply py-3 px-4 text-sm leading-4;
+        }
+        &.lg {
+            @apply py-5 px-8 text-lg leading-5;
+        }
+    }
+}
+
+.bg-primary-gradient {
+    background: linear-gradient(100deg, #00AA81 0%, #0EB400 100%);
+    @apply text-white;
+}
+.bg-secondary-gradient {
+    background: linear-gradient(100deg, #F8FBF8 0%, #E5E5E5 100%);
+    @apply text-black;
+}
+.bg-dark-gradient {
+    background: linear-gradient(100deg, #484848 0%, #323232 100%);
+    @apply text-white;
+}
+.text-primary-gradient {
+    background             : linear-gradient(135deg, #00AA81 0%, #0EB400 100%);
+    color                  : transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}

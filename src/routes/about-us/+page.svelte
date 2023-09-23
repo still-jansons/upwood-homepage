@@ -10,7 +10,6 @@
             (newStory) => (data.story = newStory)
         );
     });
-
 </script>
 
 <div>
