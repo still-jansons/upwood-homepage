@@ -4,6 +4,10 @@
     export let blok: StoryblokComponent;
 </script>
 
+<script context="module">
+    export const prerender = true;
+</script>
+
 {#key blok}
     <div
         use:storyblokEditable = {blok}
@@ -13,7 +17,7 @@
             <h1 class="text-4xl lg:text-[42px] leading-[52px] text-primary-gradient font-header font-bold">{blok.title}</h1>
         </div>
         <div class="rounded-3xl bg-primary-gradient py-9 px-10 drop-shadow-lg max-w-[640px]">
-            <form name="test" method="post" netlify netlify-honeypot="bot-field" class="flex items-center flex-wrap gap-6">
+            <form name="test" method="POST" netlify netlify-honeypot="bot-field" class="flex items-center flex-wrap gap-6">
                 <input type="hidden" name="form-name" value="test" />
                 <div class="flex-1">
                     <label class="text-lg leading-5 font-bold">
