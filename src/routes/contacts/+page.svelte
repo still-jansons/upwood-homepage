@@ -1,8 +1,10 @@
 <script lang="ts">
+    import type { PageData } from './$types';
+
     import { onMount } from "svelte";
     import { useStoryblokBridge, StoryblokComponent } from "@storyblok/svelte";
 
-    export let data;
+    export let data: PageData;
 
     onMount(() => {
         useStoryblokBridge(

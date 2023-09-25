@@ -2,8 +2,6 @@
     import {StoryblokComponent, storyblokEditable} from "@storyblok/svelte";
 
     export let blok: StoryblokComponent;
-
-    console.log(blok);
 </script>
 
 {#key blok}
