@@ -1,7 +1,5 @@
 <script lang="ts">
     import {StoryblokComponent, storyblokEditable} from "@storyblok/svelte";
-    // import { enhance } from '$app/forms'
-
     export let blok: StoryblokComponent;
 
     const form = {
@@ -45,11 +43,10 @@
         });
     }
 
-    const handle_submit = async (event: Event) => {
+    const handleSubmit = async (event: Event) => {
         resetErrors();
         submission_status.submitting = true;
         submission_status.submitted  = false;
-
 
         const data = Object.fromEntries(Object.entries(form).map(([key, value]) => [key, value.value]));
 
@@ -87,7 +84,7 @@
             <h1 class="text-4xl lg:text-[42px] leading-[52px] text-primary-gradient font-header font-bold">{blok.title}</h1>
         </div>
         <div class="rounded-3xl bg-primary-gradient py-9 px-10 drop-shadow-lg max-w-[640px]">
-            <form class="flex items-start flex-wrap gap-6" on:submit|preventDefault={handle_submit}>
+            <form class="flex items-start flex-wrap gap-6" on:submit|preventDefault={handleSubmit}>
                 <div class="flex-1">
                     <label class="text-lg leading-5 font-bold">
                         Full name
@@ -147,7 +144,7 @@
                     <div class="ml-auto">
                         <button
                             type     = "submit"
-                            class    = "bg-white text-black font-bold rounded-md px-7 py-4 text-base leading-4 uppercase min-w-[130px] disabled:bg-[#008d00] disabled:text-[#086200] disabled:cursor-not-allowed"
+                            class    = "bg-white text-black font-bold rounded-md px-7 py-4 text-base leading-4 uppercase min-w-[130px] disabled:opacity-50 disabled:text-[#086200] disabled:cursor-not-allowed"
                             disabled = {submission_status.submitting || !valid}
                         >{submission_status.submitting ? '...sending' : 'send' }</button>
                     </div>
