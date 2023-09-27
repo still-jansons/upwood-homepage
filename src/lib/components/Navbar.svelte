@@ -1,12 +1,11 @@
 <script lang="ts">
     import { page } from '$app/stores';
 
-    let path     : string;
-    let underline: HTMLElement;
-    let linkRefs : HTMLElement[] = [];
-
-    $: path       = $page.url.pathname;
-    $: drawerOpen = false;
+    let currentPath: string;
+    let underline  : HTMLElement;
+    let linkRefs   : HTMLElement[] = [];
+    let drawerOpen = false;
+    let linkExist  = true;
 
     const links = [
         {
@@ -24,19 +23,25 @@
     ];
 
     $: {
-        if (linkRefs.length > 0) {
-            setUnderline();
+
+        if (currentPath !== $page.url.pathname && linkRefs.length > 0) {
+            currentPath = $page.url.pathname;
+            linkExist   = links.some(link => link.url === currentPath);
+
+            if (!drawerOpen && linkExist) {
+                setUnderline();
+            } else {
+                drawerOpen = false;
+            }
+
         }
     }
 
-    const setUnderline = (event?: Event) => {
+    const setUnderline = () => {
+
         drawerOpen = false;
-        let activeLink: HTMLElement | undefined;
-        if (event) {
-            activeLink = event.target as HTMLElement;
-        } else {
-            activeLink = linkRefs.find(link => link.classList.contains('active'));
-        }
+        let activeLink: HTMLElement | undefined = linkRefs.find(link => link.getAttribute('href') === currentPath);
+
         if (activeLink) {
             underline.style.width = `${activeLink.offsetWidth}px`;
             underline.style.left  = `${activeLink.offsetLeft}px`;
@@ -59,16 +64,18 @@
                 {#each links as link, i}
                     <li>
                         <a href         = {link.url}
-                           class        = "text-[22px] leading-6 md:text-lg"
-                           class:active = {path === link.url}
+                           class        = "text-[22px] leading-6 md:text-lg {link.url === currentPath ? 'underline underline-offset-8 md:no-underline' : 'no-underline'}"
                            bind:this    = {linkRefs[i]}
-                           on:click     = {() => setUnderline(event)}
                         >{link.name}</a>
                     </li>
                 {/each}
-                <span bind:this={underline} class="hidden md:block h-0.5 rounded-full bg-black absolute bottom-2 transition-all ease-in-out duration-300"></span>
+                <li
+                    bind:this       = {underline}
+                    class           = "hidden md:block h-0.5 rounded-full bg-black absolute bottom-2 transition-all ease-in-out duration-300"
+                    class:invisible = {!linkExist}
+                ></li>
             </ul>
-            <a class="btn lg md:sm bg-primary-gradient w-max mx-auto" href="/" type="button">Join waitlist</a>
+            <a class="btn lg md:sm bg-primary-gradient w-max mx-auto" href="/#waitlist-form-section" type="button">Join waitlist</a>
         </nav>
         <button class="md:hidden ml-auto flex" on:click={() => (drawerOpen = !drawerOpen)}>
             {#if !drawerOpen}

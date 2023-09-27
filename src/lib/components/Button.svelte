@@ -13,6 +13,6 @@
         class:lg                    = {blok.size === "large"}
         class:bg-primary-gradient   = {blok.color === "primary"}
         class:bg-secondary-gradient = {blok.color === "secondary"}
-        href                        = "/"
+        href                        = {blok.link.url.length> 0 ? blok.link.url : '#'}
     >{blok.title}</a>
 {/key}

@@ -2,6 +2,8 @@
     import {StoryblokComponent, storyblokEditable} from "@storyblok/svelte";
 
     export let blok: StoryblokComponent;
+
+    console.log(blok);
 </script>
 
 {#key blok}
@@ -26,7 +28,7 @@
             </div>
             {#if blok.show_whitepaper_button}
                 <a
-                    href  = "/"
+                    href  = {blok.whitepaper_button_link.cached_url || '#'}
                     class = "uppercase text-2xl inline-flex items-center gap-9 pl-4 border w-fit rounded-xl bg-secondary-gradient drop-shadow-xl mx-5 md:mx-0"
                 >
                     <span class="max-w-[160px] text-green-600">{blok.whitepaper_button_title}</span>

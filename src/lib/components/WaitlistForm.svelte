@@ -66,8 +66,6 @@
 
         const response_data = await response.json();
 
-        console.log(response_data);
-
         if (!response_data.success && response_data.errors) {
             response_data.errors.issues.forEach((issue: {
                 path   : string[];
@@ -88,7 +86,8 @@
 {#key blok}
     <div
         use:storyblokEditable={blok}
-        class="min-h-[inherit] h-full py-9 md:py-20 pl-5 pr-5 md:pl-8 md:pr-8 lg:pl-20 lg:pr-0"
+        class = "min-h-[inherit] h-full py-9 md:py-20 pl-5 pr-5 md:pl-8 md:pr-8 lg:pl-20 lg:pr-0"
+        id    = "waitlist-form-section"
     >
         <h2 class="text-4xl lg:text-[42px] text-white max-w-[920px] font-header font-bold">{blok.title}</h2>
         <div class="flex flex-col md:flex-row">

@@ -9,6 +9,7 @@ import Feature from "$lib/components/Feature.svelte";
 import Banner from "$lib/components/Banner.svelte";
 import TextAndImage from "$lib/components/TextAndImage.svelte";
 import ContactForm from "$lib/components/ContactForm.svelte";
+import WhitepaperSection from "$lib/components/WhitepaperSection.svelte";
 
 export async function load() {
     storyblokInit({
@@ -18,16 +19,17 @@ export async function load() {
             https: true,
         },
         components: {
-            'page'          : Page,
-            'hero-landing'  : HeroLanding,
-            'button'        : Button,
-            'section'       : Section,
-            'waitlist-form' : WaitlistForm,
-            'feature-grid'  : FeatureGrid,
-            'feature'       : Feature,
-            'banner'        : Banner,
-            'text-and-image': TextAndImage,
-            'contact-form'  : ContactForm
+            'page'              : Page,
+            'whitepaper-section': WhitepaperSection,
+            'hero-landing'      : HeroLanding,
+            'button'            : Button,
+            'section'           : Section,
+            'waitlist-form'     : WaitlistForm,
+            'feature-grid'      : FeatureGrid,
+            'feature'           : Feature,
+            'banner'            : Banner,
+            'text-and-image'    : TextAndImage,
+            'contact-form'      : ContactForm
         }
     });
 
