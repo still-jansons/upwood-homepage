@@ -83,7 +83,7 @@
         <div>
             <h1 class="text-4xl lg:text-[42px] leading-[52px] text-primary-gradient font-header font-bold">{blok.title}</h1>
         </div>
-        <div class="rounded-3xl bg-primary-gradient py-9 px-10 drop-shadow-lg max-w-[640px]">
+        <div class="rounded-3xl bg-primary-gradient py-8 md:py-9 px-4 md:px-10 drop-shadow-lg max-w-[640px]">
             <form class="flex items-start flex-wrap gap-6" on:submit|preventDefault={handleSubmit}>
                 <div class="flex-1">
                     <label class="text-lg leading-5 font-bold">
