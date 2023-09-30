@@ -16,22 +16,22 @@
         {/if}
         <div
             class="
-                relative flex flex-col md:flex-row lg:gap-16 lg:items-center
+                2xl:container mx-auto relative flex flex-col lg:flex-row lg:gap-16 lg:items-center
                 {blok.overflowImage === 'null' && !blok.isVerticalPadding ? 'py-12' : ''}
                 {blok.overflowImage === 'null' && blok.isVerticalPadding ? 'py-36 md:py-40 ' : ''}
-                {blok.overflowImage === 'bottom' ? 'pt-36 lg:pt-40' : ''}
-                {blok.overflowImage === 'top' ? 'pb-36 lg:pb-40' : ''}
+                {blok.overflowImage === 'bottom' ? 'pt-36 md:pt-40' : ''}
+                {blok.overflowImage === 'top' ? 'pb-36 md:pb-40' : ''}
             "
         >
             <div
                 class="
                     flex-1 lg:max-w-[40%]
-                    {blok.isTextFirst ? 'md:order-1 px-5 md:px-8 lg:pl-20 lg:pr-0' : 'md:order-2 px-5 md:px-8 lg:pr-20 lg:pl-0'}
+                    {blok.isTextFirst ? 'lg:order-1 px-5 md:px-8 lg:pl-20 lg:pr-0' : 'lg:order-2 px-5 md:px-8 lg:pr-20 lg:pl-0'}
                 "
             >
-                <div class="w-full max-w-[500px] flex flex-col gap-6 {blok.isTextFirst ? 'md:ml-auto' : 'md:mr-auto'}">
+                <div class="w-full max-w-[500px] flex flex-col gap-6 {blok.isTextFirst ? 'lg:ml-auto' : 'lg:mr-auto'}">
                     <h2
-                        class                       = "text-4xl lg:text-[42px] lg:leading-[52px] font-header font-bold"
+                        class                       = "text-4xl md:text-[42px] md:leading-[52px] font-header font-bold"
                         class:text-primary-gradient = {blok.titleColor === 'primary'}
                         class:text-black            = {blok.titleColor === 'dark'}
                         class:text-white            = {blok.titleColor === 'secondary'}
@@ -54,7 +54,7 @@
             <div
                 class="
                     flex-1 lg:max-w-[60%]
-                    {blok.isTextFirst ? 'md:order-2 lg:pr-10' : 'md:order-1 lg:pl-10'}
+                    {blok.isTextFirst ? 'lg:order-2 lg:pr-10' : 'lg:order-1 lg:pl-10'}
                     {blok.overflowImage === 'bottom' ? '-mb-[25%] sm:-mb-[20%] md:-mb-[10%]' : ''}
                     {blok.overflowImage === 'top' ? '-mt-[25%] sm:-mt-[20%]  md:-mt-[10%]' : ''}
                 "
@@ -63,7 +63,7 @@
                     <img
                         src   = {blok.image.filename}
                         alt   = {blok.image.alt}
-                        class = "relative z-10 h-full max-w-full sm:max-w-[500px] lg:max-w-[500px] lg:max-w-[620px] mx-auto"
+                        class = "relative z-10 h-full max-w-full sm:max-w-[500px] md:max-w-[550px] xl:max-w-[600px] mx-auto"
                     />
                 {/if}
             </div>

@@ -2,14 +2,12 @@
     import {StoryblokComponent, storyblokEditable} from "@storyblok/svelte";
 
     export let blok: StoryblokComponent;
-
-    console.log(blok);
 </script>
 
 {#key blok}
     <div
         use:storyblokEditable = {blok}
-        class                 = "min-h-[inherit] h-full flex items-center md:pl-8 lg:pl-20"
+        class                 = "min-h-[inherit] h-full flex items-center md:pl-8 lg:pl-20 2xl:pl-8 2xl:container mx-auto"
     >
         <div class="flex flex-col gap-12 justify-center w-full lg:max-w-[540px] min-w-[360px] lg:min-w-0 pt-32 md:pt-20 pb-20">
             <div class="flex flex-col gap-6">
