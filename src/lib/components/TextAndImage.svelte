@@ -53,7 +53,7 @@
             </div>
             <div
                 class="
-                    flex-1 w-full sm:max-w-[80%] md:max-w-[60%] lg:max-w-[40%] aspect-square mx-auto
+                    flex-1 w-full max-w-[80%] md:max-w-[60%] lg:max-w-[40%] aspect-square mx-auto
                     {blok.isTextFirst ? 'lg:order-2' : 'lg:order-1'}
                     {blok.overflowImage === 'bottom' ? '-mb-[25%] sm:-mb-[20%] md:-mb-[15%] lg:-mb-[10%]' : ''}
                     {blok.overflowImage === 'top' ? '-mt-[25%] sm:-mt-[20%]  md:-mt-[15%] lg:-mt-[10%]' : ''}
@@ -63,7 +63,7 @@
                     <img
                         src   = {blok.image.filename}
                         alt   = {blok.image.alt}
-                        class = "relative z-10 h-full max-w-full"
+                        class = "relative z-10 h-full max-w-full w-auto aspect-square"
                     />
                 {/if}
             </div>
