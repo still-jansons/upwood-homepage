@@ -10,6 +10,7 @@ import Banner from "$lib/components/Banner.svelte";
 import TextAndImage from "$lib/components/TextAndImage.svelte";
 import ContactForm from "$lib/components/ContactForm.svelte";
 import WhitepaperSection from "$lib/components/WhitepaperSection.svelte";
+import LegalPage from "$lib/components/LegalPage.svelte";
 
 export async function load() {
     storyblokInit({
@@ -29,7 +30,8 @@ export async function load() {
             'feature'           : Feature,
             'banner'            : Banner,
             'text-and-image'    : TextAndImage,
-            'contact-form'      : ContactForm
+            'contact-form'      : ContactForm,
+            'legal-page'        : LegalPage,
         }
     });
 

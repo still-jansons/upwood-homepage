@@ -17,7 +17,7 @@ const config = {
 			typography: {
 				DEFAULT: {
 					css: {
-						a: {
+						'a, h1': {
 							"background"             : "linear-gradient(100deg, #00AA81 0%, #0EB400 100%)",
 							"color"                  : "transparent",
 							"-webkit-background-clip": "text",

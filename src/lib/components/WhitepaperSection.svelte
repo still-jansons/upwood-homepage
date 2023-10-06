@@ -2,7 +2,17 @@
     import { storyblokEditable, StoryblokComponent } from "@storyblok/svelte";
     import { renderRichText } from "@storyblok/svelte";
 
-    $: articleHTML = renderRichText(blok.content);
+    let articleHTML: string;
+    // let headings   : string[] = [];
+    // $: {
+    //     let heading_index = 1;
+    //     let subheading_index = 1;
+    //     headings = blok.content.content.filter((item: any) => item.type === "heading").map((item: any) => {
+    //
+    //     });
+    //     console.log(headings);
+    //     articleHTML = renderRichText(blok.content);
+    // }
 
     export let blok: any;
 </script>
