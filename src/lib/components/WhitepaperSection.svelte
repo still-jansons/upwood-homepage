@@ -2,6 +2,8 @@
     import { storyblokEditable, StoryblokComponent } from "@storyblok/svelte";
     import { renderRichText } from "@storyblok/svelte";
 
+    export let blok: any;
+
     let articleHTML: string;
     // let headings   : string[] = [];
     // $: {
@@ -11,10 +13,9 @@
     //
     //     });
     //     console.log(headings);
-    //     articleHTML = renderRichText(blok.content);
     // }
 
-    export let blok: any;
+    articleHTML = renderRichText(blok.content);
 </script>
 
 {#key blok}
