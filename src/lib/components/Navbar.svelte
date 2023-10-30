@@ -23,7 +23,6 @@
     ];
 
     $: {
-
         if (currentPath !== $page.url.pathname && linkRefs.length > 0) {
             currentPath = $page.url.pathname;
             linkExist   = links.some(link => link.url === currentPath);
@@ -33,12 +32,10 @@
             } else {
                 drawerOpen = false;
             }
-
         }
     }
 
     const setUnderline = () => {
-
         drawerOpen = false;
         let activeLink: HTMLElement | undefined = linkRefs.find(link => link.getAttribute('href') === currentPath);
 

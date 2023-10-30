@@ -8,10 +8,12 @@
     const meta_description = data.story.content.meta && data.story.content.meta.description.length > 0 ? data.story.content.meta.description : 'Socially responsible investment in highly profitable nature preservation project digital shares.';
 
     onMount(() => {
-        useStoryblokBridge(
-            data.story.id,
-            (newStory) => (data.story = newStory)
-        );
+        if (data.story) {
+            useStoryblokBridge(
+                data.story.id,
+                (newStory) => (data.story = newStory)
+            );
+        }
     });
 
 </script>
@@ -20,8 +22,10 @@
     <meta name="description" content="{meta_description}" />
 </svelte:head>
 
-<div>
-    {#if data.story}
-        <StoryblokComponent blok={data.story.content} />
-    {/if}
-</div>
+{#key data.story.id}
+    <div>
+        {#if data.story}
+            <StoryblokComponent blok={data.story.content} />
+        {/if}
+    </div>
+{/key}
