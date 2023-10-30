@@ -43,6 +43,6 @@
     </div>
     <div class="flex flex-col items-center md:flex-row gap-3 md:gap-10 lg:gap-16 text-base leading-[18px] font-bold">
         <p class="order-2 md:order-1">© All Rights Reserved 2023</p>
-        <p class="order-1 md:order-2">Privacy policy</p>
+        <a href="/privacy-policy" class="order-1 md:order-2">Privacy policy</a>
     </div>
 </div>
