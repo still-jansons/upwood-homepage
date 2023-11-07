@@ -24,9 +24,4 @@
         font-display: swap;
     }
 }
-@layer components {
-    .hello {
-        color: black;
-    }
-}
 
